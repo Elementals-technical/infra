@@ -1,0 +1,9 @@
+# Copy to .envrc, fill in your own values, then run: direnv allow
+# DO API token (personal)
+export DIGITALOCEAN_TOKEN=""
+# Spaces key for the S3 backend (state bucket elementals-terraform-state only)
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+# Spaces key for the provider: Limited Access, R/W/D on vivid-build PROD buckets
+export SPACES_ACCESS_KEY_ID=""
+export SPACES_SECRET_ACCESS_KEY=""
