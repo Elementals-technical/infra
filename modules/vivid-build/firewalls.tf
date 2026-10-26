@@ -44,4 +44,12 @@ resource "digitalocean_database_firewall" "valkey" {
     type  = "ip_addr"
     value = var.gpu_server_ip
   }
+
+  dynamic "rule" {
+    for_each = var.valkey_extra_droplet_ids
+    content {
+      type  = "droplet"
+      value = rule.value
+    }
+  }
 }
