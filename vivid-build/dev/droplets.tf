@@ -1,9 +1,15 @@
+locals {
+  nodejs_tag = "NodeJS-24-22-1"
+}
+
 resource "digitalocean_droplet" "admin_panel" {
   name     = "build-admin-panel"
   region   = "fra1"
   size     = "s-2vcpu-4gb"
   image    = "168977420"
   vpc_uuid = "fc7cb40e-dc84-11e8-8b13-3cfdfea9f160"
+
+  tags = [local.nodejs_tag]
 
   backups           = false
   monitoring        = false
@@ -18,6 +24,8 @@ resource "digitalocean_droplet" "render_backend" {
   size     = "s-2vcpu-4gb"
   image    = "168977420"
   vpc_uuid = "fc7cb40e-dc84-11e8-8b13-3cfdfea9f160"
+  
+  tags = [local.nodejs_tag]
 
   backups           = false
   monitoring        = false
@@ -32,6 +40,8 @@ resource "digitalocean_droplet" "simulation_api" {
   size     = "s-2vcpu-2gb"
   image    = "195932981"
   vpc_uuid = "fc7cb40e-dc84-11e8-8b13-3cfdfea9f160"
+
+  tags = [local.nodejs_tag]
 
   backups           = false
   monitoring        = false
