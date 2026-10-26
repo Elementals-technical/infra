@@ -9,7 +9,7 @@ resource "digitalocean_droplet" "this" {
   tags     = var.droplet_tags
 
   backups           = false
-  monitoring        = false
+  monitoring        = each.value.monitoring
   ipv6              = false
   public_networking = true
   resize_disk       = true # TODO: switch to false in a separate apply

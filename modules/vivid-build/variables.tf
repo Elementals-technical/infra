@@ -6,6 +6,7 @@ variable "droplets" {
     image    = string
     region   = string
     vpc_uuid = string
+    monitoring = optional(bool, false)
   }))
 }
 
@@ -64,4 +65,10 @@ variable "vpn_droplet_id" {
 variable "gpu_server_ip" {
   description = "Public IP of the on-prem GPU server (render orchestrator)"
   type        = string
+}
+
+variable "valkey_extra_droplet_ids" {
+  description = "Droplets from other projects allowed to access Valkey (managed outside this state)"
+  type        = list(string)
+  default     = []
 }
