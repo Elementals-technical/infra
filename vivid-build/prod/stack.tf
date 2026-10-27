@@ -56,6 +56,7 @@ module "stack" {
     simulation_api     = "simulation-api-storage"
     manual_dataset_api = "manual-dataset-api-storage"
     image_compositor   = "vivid-image-compositor-storage"
+    modular_api        = "modular-api-storage"
   }
 
   vpn_droplet_id = "370421843"
